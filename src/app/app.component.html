@@ -1,0 +1,97 @@
+<!-- <h2>App Component</h2>
+<button class="btn btn-primary" (click)="btnClicked()">Hey</button> 
+<div style="margin-top: 30px"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-md-6">
+       register card -->
+       <div class="col-xs-12 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div><h3>Department</h3></div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label><h3>DepartmentId</h3></label>
+              <input
+                type="text"
+                name="DepartmentId"
+                class="form-control"
+                style="display: inline"
+                [(ngModel)]="department.departmentId"
+              />
+            </div>
+
+            <div class="form-group">
+              <label><h3>DepartmentName</h3></label>
+              <input
+                type="text"
+                name="DepartmentName"
+                class="form-control"
+                [(ngModel)]="department.departmentName"
+              /></div>
+
+      
+            <div class="form-group">
+              <button class="btn btn-block btn-primary" (click)="onRegister()">
+                Register
+              </button>
+
+              <button class="btn btn-block btn-success" (click)="onUpdate()">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--<div>
+  <tbody>
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+    </tr>
+  </thead>
+  </tbody>
+  <tbody>
+    <tr *ngFor="let department of department">
+      <td>{{department.departmentId}}</td>
+      <td>{{department.departmentName}}</td>
+    </tr>
+  </tbody>
+</div>-->
+<div class="col-xs-6 col-md-6">
+
+  <div class="row" *ngFor="let department of departments">
+    <div class="col-xs-6 col-md-6" style="margin-bottom: 10px">
+      <div class="card" style="height: 180px">
+        <div class="card-header">
+          <div
+            class="col-xs-10 col-md-10"
+            style="display: inline-block; color: dodgerblue"
+          >
+          
+            
+          <h6>{{ department.departmentName + " - " + department.departmentId }}</h6>
+        
+          </div>
+          <div class="col-xs-2 col-md-2" style="display: inline-block">
+            <h6
+              style="
+                cursor: pointer;
+                text-align: center;
+                padding-bottom: 5px;
+                width: 20px;
+                background-color: #0069d9;
+                color: white;
+              "
+              (click)="onDelete(department.departmentId)"
+            >
+              x
+            </h6>
+          </div>
+        
+        
+     
+
+
